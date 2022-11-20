@@ -1,9 +1,14 @@
 const { app, BrowserWindow } = require('electron')
 const path = require("path")
 const WinState = require("electron-win-state").default
+const createTray=require('./tray')
+
 require("./controller/getSource")
 require("./controller/alert")
 require('./controller/openWin')
+require("./controller/getFilelist")
+require('./controller/buildMenu')
+
 
 const createWindow = () => {
   const winState = new WinState({
@@ -29,7 +34,7 @@ const createWindow = () => {
   win.on('ready-to-show', () => {
     win.show()
   })
-
+  createTray(app,win)
 }
 app.whenReady().then(() => {
   createWindow()
@@ -43,3 +48,4 @@ app.whenReady().then(() => {
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
 })
+

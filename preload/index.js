@@ -15,9 +15,25 @@ const open = (url) => {
 const close=()=>{
   ipcRenderer.invoke("on-close-event")
 }
+const getFileList=async ()=>{
+  const fileList=await ipcRenderer.invoke("on-getfiles-event")
+  return fileList
+}
+
+const openDialog=()=>{
+  ipcRenderer.send('on-opendialog-event')
+}
+const onRendererEvent=(cb)=>{
+  ipcRenderer.on('on-renderer-event',(e,msg)=>{
+    cb()
+  })
+}
 contextBridge.exposeInMainWorld("myApi", {
   sendUrl,
   alert,
   open,
-  close
+  close,
+  getFileList,
+  openDialog,
+  onRendererEvent
 })

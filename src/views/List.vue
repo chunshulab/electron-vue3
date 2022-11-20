@@ -25,7 +25,6 @@ const currentIndex = ref(0)
 const websiteStore = useWebsiteStore()
 const itemClick = (index, url) => {
   currentIndex.value = index
-  //window.open(url, '_blank', 'width=800,height=500')
   myApi.open(url)
 }
 const deletex = (item, index) => {

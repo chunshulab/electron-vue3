@@ -10,7 +10,7 @@ const saveas = async (srcUrl) => {
     const contextMenu = Menu.buildFromTemplate([
       {
         label: '图片另存为...',
-        accelerator: "CommandOrControl+s",
+        accelerator: "CommandOrControl+S",
         click: () => {
           got.get(srcUrl).then(async (Response) => {
             const chunk = Buffer.from(Response.rawBody)

@@ -11,10 +11,12 @@
   </div>
 </template>
 <script setup>
-import { ref, inject } from 'vue'
-import _ from 'lodash'
+import { ref, inject,defineProps,watch} from 'vue'
+import _, {update} from 'lodash'
 const { setIsShow } = inject('dialos-visible')
 const { setKeywords } = inject('searchbar-keywords')
+const emits=defineEmits(['update:act'])
+
 let txt = ref('')
 const handleClick = () => {
   setIsShow(true)
@@ -22,6 +24,8 @@ const handleClick = () => {
 const search = _.debounce((e) => {
   setKeywords(e)
 }, 500)
+defineExpose({handleClick})
+
 </script>
 <style scoped lang="scss">
 .main {

@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "chcp 65001 && nodemon --exec  electron . --watch ./ --ext .js,.html,.css,.vue"
+    "start": "chcp 65001 && nodemon --exec  electron . --watch ./ --ext .js,.html,.css,.vue",
+    "app:dist": "electron-builder"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
@@ -18,16 +19,17 @@
     "pinia": "^2.0.23",
     "store2": "^2.14.2",
     "vue": "^3.2.41",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "electron-win-state": "^1.1.22",
+    "lodash": "^4.17.21",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "randomstring": "^1.2.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
     "electron": "latest",
-    "electron-win-state": "^1.1.22",
-    "lodash": "^4.17.21",
-    "randomstring": "^1.2.3",
-    "sass": "^1.55.0",
-    "sass-loader": "^13.1.0",
+    "electron-builder": "^23.6.0",
     "vite": "^3.2.0"
   }
 }
