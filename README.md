@@ -1,7 +1,26 @@
-# Vue 3 + Vite
+# Vue 3 + Vite + Pinia +Electron小案例
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+为了学习vue3+electron跟着一个系列课堂做的小案例
 
-## Recommended IDE Setup
+课堂地址：https://www.bilibili.com/video/BV1FP4115739
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+<img src="./public/a.png" width="50%" height="50%" />
+
+可以正常运行并生成exe等文件，
+
+里面功能齐全，
+
+非常合适初学着学习使用。
+
+
+## 操作要点
+
+"dev": "vite", //运行vue，electron中用到的vue项目需要运行起来了在electron中才能看到，你可以直接在本机部署，也可以部署到服务器。
+
+"build": "vite build",
+
+"preview": "vite preview",
+
+"start": "chcp 65001 && nodemon --exec  electron . --watch ./ --ext .js,.html,.css,.vue",   //修改源文件可以随时打开桌面窗口看效果
+
+"app:dist": "electron-builder"  //生成exe等文件
